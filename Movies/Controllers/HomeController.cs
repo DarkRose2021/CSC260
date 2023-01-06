@@ -23,6 +23,11 @@ namespace Movies.Controllers
 			return View();
 		}
 
+		public IActionResult Before()
+		{
+			return View();
+		}
+
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()
 		{
