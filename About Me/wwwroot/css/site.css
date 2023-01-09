@@ -19,6 +19,10 @@ body {
     color: #252627;
 }
 
+.background {
+    background-color: #16BAC5;
+}
+
 ul {
     list-style: '\2605';
 }
