@@ -3,7 +3,7 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">About Me</h1>
+    <h1>About Me</h1>
     <h2>My Name Is Katie King</h2>
     <div>
         <h3>Things I Like To Do:</h3>
@@ -16,8 +16,33 @@
             <li>Listen to Music</li>
         </ul>
     </div>
-    <div>
+    <div class="m-3">
         I'm not a social person, but it's something I'm working on. I like making websites. 
         I tend to focus on the looks and the layout more than anything, but it can be fun to add new functionality to websites.
+    </div>
+
+    <div id="carouselExampleControls" class="carousel slide w-75 mx-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/assets/ChristmasHorse.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/assets/ElfHorse.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/assets/horses.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/assets/horses.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 </div>

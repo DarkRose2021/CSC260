@@ -4,17 +4,39 @@
 @{
     ViewData["Title"] = "Before Neumont";
 }
-<div>
-    <h1>Life Before Neumont</h1>
+<div class="container">
+    <h1 class="text-center">Life Before Neumont</h1>
 
-    <div class="card" style="width: 18rem;">
-        <img src="./assets/highschool.jpeg" class="card-img-top" alt="3 people on a ledge, posing">
-        <div class="card-body">
-            <p class="card-text">Me and my old friends</p>
+    <div class="d-flex flex-row">
+        <div class="card mx-3" style="width: 18rem;">
+            <img src="~/assets/highschool.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+                <p class="card-text">Me and my old friends</p>
+            </div>
+        </div>
+
+        <div class="card mx-3" style="width: 18rem;">
+            <img src="~/assets/meandmom.jpeg" class="card-img-top" alt="">
+            <div class="card-body">
+                <p class="card-text">Me and my mom on a trail ride</p>
+            </div>
+        </div>
+        <div class="card mx-3" style="width: 18rem;">
+            <video width="320" height="240" controls>
+                <source src="~/assets/ridingvid.mp4" type="video/mp4">
+            </video>
+            <div class="card-body">
+                <p class="card-text">Me doing the barrel pattern</p>
+            </div>
         </div>
     </div>
 
-    <div>Before Neumont I was a lot more shy and less likely to talk to anyone other than my friends.
-        Most the time I was found with my nose in a book, ignoring everyone and everything. I 
+    <div class="text-center text-wrap mx-4 beforetxt p-3 rounded-2 m-3">
+        Before Neumont I was a lot more shy and less likely to talk to anyone other than my friends.
+        Most the time I was found with my nose in a book, ignoring everyone and everything. I was considered the "smart kid", but I just listened
+        in class and did my work. <br />
+        I moved schools right before 7th grade, this caused me to shutdown and not talk to anyone for a long time. My friends from my old school eventually 
+        stopped talking to me, this also happened with my high school friends when I switched to online classes during COVID. Currently this is why it's 
+        hard for me to make friends.
     </div>
 </div>

@@ -15,13 +15,42 @@ html {
 
 body {
     margin-bottom: 60px;
-    background-color: #C8BFC7;
-    color: #252627;
+    background-color: #9DD0D4;
+    color: #313131;
+    font-size: 1.3em;
+}
+
+.card {
+    background-color: #63B2B8 !important;
+}
+
+.text-dark {
+    color: #313131 !important;
+}
+
+.nav-link:hover {
+    border-radius: 15%;
+    background-color: #278564;
+}
+
+.nav-link:active {
+    border-radius: 15%;
+    background-color: #63B2B8;
+    color: #63B2B8 !important;
+}
+
+h1 {
+    font-weight: bold;
 }
 
 .background {
-    background-color: #16BAC5;
+    background-color: #63B2B8 !important;
 }
+
+.beforetxt {
+    background-color: #63B2B8;
+}
+
 
 ul {
     list-style: '\2605';
