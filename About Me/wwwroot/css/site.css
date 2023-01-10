@@ -20,6 +20,10 @@ body {
     font-size: 1.3em;
 }
 
+a {
+    color: #9DD0D4 !important;
+}
+
 .card {
     background-color: #63B2B8 !important;
 }
