@@ -6,6 +6,7 @@ namespace Movies.Controllers
 {
 	public class HomeController : Controller
 	{
+		private static int intCount = 0;
 		private readonly ILogger<HomeController> _logger;
 
 		public HomeController(ILogger<HomeController> logger)
@@ -20,11 +21,32 @@ namespace Movies.Controllers
 
 		public IActionResult Privacy()
 		{
+			ViewData["Title"] = "Privacy Policy";
 			return View();
 		}
 
 		public IActionResult Before()
 		{
+			return View();
+		}
+
+		public IActionResult madlib()
+		{
+			ViewData["Title"] = "Input";
+			return View();
+		}
+
+		[HttpPost]
+		public IActionResult Output(string Firstname)
+		{
+			ViewBag.FirstName = Firstname;
+			return View();
+		}
+
+		public IActionResult Counter()
+		{
+			ViewBag.Count = intCount++;
+			ViewData["Count"] = intCount;
 			return View();
 		}
 
