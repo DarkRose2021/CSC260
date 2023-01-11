@@ -17,6 +17,7 @@ namespace Movies.Controllers
 		public IActionResult Index()
 		{
 			return View();
+			//return Redirect("Home/Privacy");
 		}
 
 		public IActionResult Privacy()
