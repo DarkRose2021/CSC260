@@ -1,0 +1,13 @@
+﻿@model Movie;
+
+<partial name="_MoviePartialView" />
+
+@*
+@if (Model==null){
+	<h2>No Movies</h2>
+}else{
+	<h3>@Model.title</h3>
+	<h3>@Model.year</h3>
+	<h3>@Model.rating</h3>
+}
+*@
