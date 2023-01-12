@@ -1,3 +1,11 @@
+:root {
+    --purple: #948392;
+    --blue: #58A4B0;
+    --yellow: #E2DE84;
+    --pink: #B8606B;
+    --black: #36393B;
+}
+
 html {
   font-size: 14px;
 }
@@ -14,5 +22,30 @@ html {
 }
 
 body {
+    background-color: var(--black);
   margin-bottom: 60px;
+}
+
+nav {
+    background-color: #313436;
+    border-bottom: solid 1px #2D2F31;
+    box-shadow: #2D2F31 2px 2px; 
+    color: var(--yellow);
+}
+
+a {
+    color: var(--yellow);
+}
+
+    a:hover {
+        color: #BAB86D;
+
+    }
+
+    a:active {
+        color: #313436;
+    }
+
+h1{
+    color: var(--blue);
 }
