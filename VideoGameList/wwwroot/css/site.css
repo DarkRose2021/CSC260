@@ -26,23 +26,29 @@ body {
   margin-bottom: 60px;
 }
 
-nav {
+nav, footer {
     background-color: #313436;
+    color: var(--yellow);
+    box-shadow: #2D2F31 2px 2px;
+}
+
+nav {
     border-bottom: solid 1px #2D2F31;
-    box-shadow: #2D2F31 2px 2px; 
+}
+
+footer{
+    border-top: solid 1px #2D2F31;
+}
+
+a, .nav-link {
     color: var(--yellow);
 }
 
-a {
-    color: var(--yellow);
-}
-
-    a:hover {
+    a:hover, .nav-link:hover {
         color: #BAB86D;
-
     }
 
-    a:active {
+    a:active, .nav-link:active {
         color: #313436;
     }
 
