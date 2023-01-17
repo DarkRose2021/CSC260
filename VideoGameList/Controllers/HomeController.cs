@@ -8,18 +8,12 @@ namespace VideoGameList.Controllers
 	{
 		private static List<Games> Gamelist = new List<Games>
 		{
-			new Games("Stardew Valley", "Windows PC, PlayStation 4, Xbox One, Switch, Mobile", "Indie, RPG, Simulation", 'E', 2016, "~/assets/stardew.jpg","", null, false),
-			new Games("Stray", "Windows PC, PlayStation 4, PlayStation 5", "Adventure, Indie", 'E', 2022, "~/assets/stray.jpg", "", null, false),
-			new Games("Spirtfarer", "PC, PlayStation 4, Nintendo Switch, Xbox One", "Adventure, Indie, Simulation", 'T', 2020, "~/assets/spiritfarer.jpg", "", null, false),
-			new Games(),
-			new Games(),
-			new Games(),
-			new Games(),
-			new Games(),
-			new Games(),
-			new Games(),
-			new Games(),
-			new Games(),
+			new Games("Stardew Valley", "Windows PC, PS4, Xbox One, Switch, Mobile", "Indie, RPG, Simulation", 'E', 2016, "stardew.jpg","", null, false),
+			new Games("Stray", "Windows PC, PS4, PS5", "Adventure, Indie", 'E', 2022, "stray.jpg", "", null, false),
+			new Games("Spirtfarer", "PC, PS4, Switch, Xbox One", "Adventure, Indie, Simulation", 'T', 2020, "spiritfarer.jpg", "", null, false),
+			new Games("Satisfactory","PC", "Adventure, Indie, Simulation, Strategy, Early Access", null, 2020, "satisfactory.jpg", "", null, false),
+			new Games("House Flipper", "PC", "Indie, Simulation", 'E', 2018, "houseflipper.jpg", "", null, false),
+			new Games("Sims 4", "PC, PS4, Xbox", "Life simulation game, Free-to-play, Casual game, Simulation Game, Adventure", 'T', 2014, "sims4.png", "", null, false)
 		};
 		private readonly ILogger<HomeController> _logger;
 
@@ -40,7 +34,7 @@ namespace VideoGameList.Controllers
 
 		public IActionResult Collection()
 		{
-			return View();
+			return View(Gamelist);
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

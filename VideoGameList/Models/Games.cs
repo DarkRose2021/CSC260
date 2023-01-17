@@ -2,6 +2,7 @@
 {
 	public class Games
 	{
+		public static DateTime dt = DateTime.Now;
 		private static int? nextID = 0;
 		public int? Id { get; set; } = nextID++;
 		public string Title { get; set; } = "[No Title]";
@@ -12,11 +13,11 @@
 		public string Image { get; set; } = "";
 		public Boolean IsLoaned { get; set; }
 		public string? LoanedTo { get; set; } = "";
-		public DateOnly? LoanedDate { get; set; } = null;
+		public DateTime? LoanedDate { get; set; } = dt;
 
 		public Games() { }
 
-		public Games(string title, string platform, string genre, char? rating, int? releaseYear, string image, string? loanedTo, DateOnly? loanedDate, Boolean isloaned)
+		public Games(string title, string platform, string genre, char? rating, int? releaseYear, string image, string? loanedTo, DateTime? loanedDate, Boolean isloaned)
 		{
 			this.Title = title;
 			this.Platform = platform;
