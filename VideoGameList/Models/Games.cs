@@ -7,25 +7,26 @@
 		public string Title { get; set; } = "[No Title]";
 		public string Platform { get; set; } = "";
 		public string Genre { get; set; } = "";
-		public float? Rating { get; set; } = null;
+		public char? Rating { get; set; } = null;
 		public int? ReleaseYear { get; set; } = null;
 		public string Image { get; set; } = "";
-		public string? LoanedTo { get; set; } = null;
+		public Boolean IsLoaned { get; set; }
+		public string? LoanedTo { get; set; } = "";
 		public DateOnly? LoanedDate { get; set; } = null;
 
 		public Games() { }
 
-		public Games(int? id, string title, string platform, string genre, float? rating, int? releaseYear, string image, string? loanedTo, DateOnly? loanedDate)
+		public Games(string title, string platform, string genre, char? rating, int? releaseYear, string image, string? loanedTo, DateOnly? loanedDate, Boolean isloaned)
 		{
-			Id = id;
-			Title = title;
-			Platform = platform;
-			Genre = genre;
-			Rating = rating;
-			ReleaseYear = releaseYear;
-			Image = image;
-			LoanedTo = loanedTo;
-			LoanedDate = loanedDate;
+			this.Title = title;
+			this.Platform = platform;
+			this.Genre = genre;
+			this.Rating = rating;
+			this.ReleaseYear = releaseYear;
+			this.Image = image;
+			this.LoanedTo = loanedTo;
+			this.LoanedDate = loanedDate;
+			this.IsLoaned = isloaned;
 		}
 	}
 }
