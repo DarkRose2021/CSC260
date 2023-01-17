@@ -68,5 +68,16 @@ h1{
 
 h2{
     color: var(--purple);
-    text-align: center;
+}
+
+.p{
+    color: var(--blue);
+}
+
+.g {
+    color: var(--yellow);
+}
+
+.r {
+    color: var(--pink);
 }
