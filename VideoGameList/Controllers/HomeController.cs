@@ -35,8 +35,7 @@ namespace VideoGameList.Controllers
 
 		public IActionResult Loaned(string name)
 		{
-
-			return View();
+			return View(name);
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

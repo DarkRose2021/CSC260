@@ -31,6 +31,14 @@ namespace Movies.Controllers
 			return View();
 		}
 
+		public IActionResult ParamTest(int? id)
+		{
+			return Content($"id = {id?.ToString() ?? "NULL"}");
+			//?? = NULL coalescing Operator, if left is null do the right
+			//id? = null check, if id is null do not do tostring on right
+			//if multi params sent in, priority: form, route, query
+		}
+
 		public IActionResult madlib()
 		{
 			ViewData["Title"] = "Input";
