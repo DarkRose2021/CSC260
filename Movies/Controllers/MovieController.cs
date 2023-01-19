@@ -16,6 +16,24 @@ namespace Movies.Controllers
             return View();
         }
 
+        [HttpGet]//create forms loads
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]//create form saves
+        public IActionResult Create(Movie m)
+        {
+            if (m.title != null)
+            {
+                MoviesList.Add(m);
+                TempData["success"] = "Movie Added";
+                return RedirectToAction("MultiMovies", "Movie");
+            }
+            return View();
+        }
+
         public IActionResult DisplayMovie()
         {
             Movie m = new Movie("Iron Man", 2008, 5.0f);

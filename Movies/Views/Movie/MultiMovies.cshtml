@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<Movie>
 
 	<h1>Movie List</h1>
+	<h3>@TempData["success"]</h3>
 <p>----------------------------------------------</p>
 @if (Model == null)
 {
