@@ -11,7 +11,7 @@
                 <p class="p">Platforms: @games.Platform</p>
                 <p class="g">Genre: @games.Genre</p>
                 <p class="r">ESRB Rating: @games.Rating</p>
-                @if (games.LoanedTo != null || games.LoanedTo != "")
+                @if (games.IsLoaned != false)
                 {
                         <p>Loaned to @games.LoanedTo on @games.LoanedDate</p>
                 }
