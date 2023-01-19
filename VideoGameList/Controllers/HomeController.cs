@@ -28,18 +28,16 @@ namespace VideoGameList.Controllers
 			return View();
 		}
 
+		[HttpGet]
 		public IActionResult Collection()
 		{
 			return View(Gamelist);
 		}
 
-		public IActionResult Loaned(string name)
+		[HttpPost]
+		public IActionResult Collection()
 		{
-			if (name != null)
-			{
-
-			}
-			return View();
+			return View(Gamelist);
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

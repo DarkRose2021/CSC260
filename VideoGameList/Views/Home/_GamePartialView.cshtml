@@ -11,8 +11,8 @@ else
         <p class="p">Platforms: @Model.Platform</p>
         <p class="g">Genre: @Model.Genre</p>
         <p class="r">ESRB Rating: @Model.Rating</p>
-        <form asp-action="Loaned" asp-controller="Home">
-            <input name="name" type="text" required>
+        <form method="post">
+            <input asp-for="LoanedTo" required>
             <button type="submit">Loan</button>
         </form>
     </div>
