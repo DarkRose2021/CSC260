@@ -1,0 +1,19 @@
+﻿@model Games;
+
+@if (Model == null){
+	<h1>No Games in Collection</h1>
+}
+else
+{
+    <h2>@Model.Title</h2>
+    <div>
+        <img src="~/assets/@Model.Image" width="400px"> <br>
+        <p class="p">Platforms: @Model.Platform</p>
+        <p class="g">Genre: @Model.Genre</p>
+        <p class="r">ESRB Rating: @Model.Rating</p>
+        <form asp-action="Loaned" asp-controller="Home">
+            <input name="name" type="text" required>
+            <button type="submit">Loan</button>
+        </form>
+    </div>
+}

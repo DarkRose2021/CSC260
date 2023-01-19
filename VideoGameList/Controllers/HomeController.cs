@@ -35,7 +35,11 @@ namespace VideoGameList.Controllers
 
 		public IActionResult Loaned(string name)
 		{
-			return View(name);
+			if (name != null)
+			{
+
+			}
+			return View();
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
