@@ -9,11 +9,24 @@ else
     <div>
         <img src="~/assets/@Model.Image" width="400px"> <br>
         <p class="p">Platforms: @Model.Platform</p>
+        <p class="g">Release Year: @Model.ReleaseYear</p>
         <p class="g">Genre: @Model.Genre</p>
         <p class="r">ESRB Rating: @Model.Rating</p>
-        <form method="post">
-            <input asp-for="LoanedTo" required>
-            <button type="submit">Loan</button>
-        </form>
+        
+        @if (Model.LoanedDate.HasValue)
+        {
+            <p>Loaned to @Model.LoanedTo on @Model.LoanedDate</p>
+            <form asp-action="Return" asp-route-id="@Model.Id" method="post">
+                <button type="submit">Return</button>
+            </form>
+            
+        }
+        else
+        {
+            <form asp-action="Collection" asp-route-id="@Model.Id" method="post">
+                <input asp-for="LoanedTo" name="LoanedTo" placeholder="Name" required>
+                <button type="submit">Loan</button>
+            </form>
+        }
     </div>
 }

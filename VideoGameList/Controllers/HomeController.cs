@@ -6,7 +6,6 @@ namespace VideoGameList.Controllers
 {
 	public class HomeController : Controller
 	{
-		DateTime dt = DateTime.Now;
 		private static List<Games> Gamelist = new List<Games>
 		{
 			new Games("Stardew Valley", "Windows PC, PS4, Xbox One, Switch, Mobile", "Indie, RPG, Simulation", 'E', 2016, "stardew.jpg","", null, false),
@@ -35,9 +34,23 @@ namespace VideoGameList.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult Collection()
+		public IActionResult Collection(int? id, string LoanedTo)
 		{
+			DateTime dt = DateTime.Now;
+			Games onegame = Gamelist.Find(g => g.Id == id);
+			onegame.LoanedTo = LoanedTo;
+			onegame.LoanedDate = dt;
+
 			return View(Gamelist);
+		}
+
+		[HttpPost]
+		public IActionResult Return(int? id)
+		{
+			Games onegame = Gamelist.Find(g => g.Id == id);
+			onegame.LoanedDate = null;
+			onegame.LoanedTo = null;
+			return RedirectToAction("Collection", "Home");
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
