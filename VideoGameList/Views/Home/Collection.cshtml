@@ -1,8 +1,12 @@
 ﻿@model IEnumerable<Games>
+@{
+    ViewData["Title"] = "Game Collection";
+}
 
 <h1>Game Collection</h1>
+<h2>You have @ViewBag.count games in your collection</h2>
 <div>
-    <div>
+    <div class="allGames">
         @foreach (Games games in Model)
         {
             <partial name="_GamePartialView" for="@games"/>

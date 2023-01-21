@@ -11,13 +11,12 @@
 		public char? Rating { get; set; } = null;
 		public int? ReleaseYear { get; set; } = null;
 		public string Image { get; set; } = "";
-		public Boolean IsLoaned { get; set; }
 		public string? LoanedTo { get; set; } = "";
-		public DateTime? LoanedDate { get; set; } = dt;
+		public DateTime? LoanedDate { get; set; }
 
 		public Games() { }
 
-		public Games(string title, string platform, string genre, char? rating, int? releaseYear, string image, string? loanedTo, DateTime? loanedDate, Boolean isloaned)
+		public Games(string title, string platform, string genre, char? rating, int? releaseYear, string image, string? loanedTo, DateTime? loanedDate)
 		{
 			this.Title = title;
 			this.Platform = platform;
@@ -27,7 +26,6 @@
 			this.Image = image;
 			this.LoanedTo = loanedTo;
 			this.LoanedDate = loanedDate;
-			this.IsLoaned = isloaned;
 		}
 	}
 }

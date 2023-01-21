@@ -29,7 +29,7 @@ body {
 nav, footer {
     background-color: #313436;
     color: var(--yellow);
-    box-shadow: #2D2F31 2px 2px;
+    box-shadow: 2px 2px #2D2F31;
 }
 
 nav {
@@ -66,18 +66,75 @@ h1{
     text-align: center;
 }
 
-h2{
+h2 {
+    text-align: center;
     color: var(--purple);
+    font-weight: bold;
 }
 
-.p{
+.blue{
     color: var(--blue);
 }
 
-.g {
+.yellow {
     color: var(--yellow);
 }
 
-.r {
+.pink {
     color: var(--pink);
 }
+
+.allGames {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gameCard {
+    padding: 2%;
+    text-align:center;
+    background-color: #313436;
+    border: solid 1px #2D2F31;
+    border-radius: 5px;
+    box-shadow: 5px 5px;
+    max-width: 500px;
+    margin: 1%;
+}
+
+    .gameCard img {
+        flex-shrink: 1;
+        border: 5px solid #515355;
+        border-radius: 10px;
+    }
+
+.gameCard p{
+    font-size: 1.3em;
+}
+
+.gameCard input[type="text"] {
+    color: var(--pink);
+    background-color: #2D2F31;
+    border: solid #1e2021;
+    border-radius: 4px;
+}
+
+.gameCard button {
+    border: none;
+    background-color: var(--blue);
+    padding: 1%;
+    margin: .5%;
+    width: fit-content;
+    color: black;
+    border-radius: 4px;
+}
+
+    .gameCard button:hover {
+        background-color: #498791;
+    }
+
+    .gameCard button:active {
+        background-color: #313436;
+        color: #313436;
+    }

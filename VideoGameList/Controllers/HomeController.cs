@@ -8,12 +8,12 @@ namespace VideoGameList.Controllers
 	{
 		private static List<Games> Gamelist = new List<Games>
 		{
-			new Games("Stardew Valley", "Windows PC, PS4, Xbox One, Switch, Mobile", "Indie, RPG, Simulation", 'E', 2016, "stardew.jpg","", null, false),
-			new Games("Stray", "Windows PC, PS4, PS5", "Adventure, Indie", 'E', 2022, "stray.jpg", "", null, false),
-			new Games("Spirtfarer", "PC, PS4, Switch, Xbox One", "Adventure, Indie, Simulation", 'T', 2020, "spiritfarer.jpg", "", null, false),
-			new Games("Satisfactory","PC", "Adventure, Indie, Simulation, Strategy, Early Access", null, 2020, "satifactory.jpg", "", null, false),
-			new Games("House Flipper", "PC", "Indie, Simulation", 'E', 2018, "houseflipper.jpg", "", null, false),
-			new Games("Sims 4", "PC, PS4, Xbox", "Life simulation game, Free-to-play, Casual game, Simulation Game, Adventure", 'T', 2014, "sims4.png", "", null, false)
+			new Games("Stardew Valley", "PC, PS4, Xbox One, Switch", "Indie, RPG, Simulation", 'E', 2016, "stardew.jpg","", null),
+			new Games("Slime Rancher", "PC, PS4, Xbox One", "Action, Adventure, Indie", 'E', 2017, "slimerancher.jpg", "", null),
+			new Games("Spirtfarer", "PC, PS4, Switch, Xbox One", "Adventure, Indie, Simulation", 'T', 2020, "spiritfarer.jpg", "", null),
+			new Games("Satisfactory","PC", "Adventure, Indie, Strategy", null, 2020, "satifactory.jpg", "", null),
+			new Games("House Flipper", "PC", "Indie, Simulation", 'E', 2018, "houseflipper.jpg", "", null),
+			new Games("Stray", "PC, PS4 & 5", "Adventure, Indie", 'E', 2022, "stray.jpg", "", null)
 		};
 		private readonly ILogger<HomeController> _logger;
 
@@ -30,6 +30,7 @@ namespace VideoGameList.Controllers
 		[HttpGet]
 		public IActionResult Collection()
 		{
+			ViewBag.count = Gamelist.Count;
 			return View(Gamelist);
 		}
 
@@ -40,6 +41,7 @@ namespace VideoGameList.Controllers
 			Games onegame = Gamelist.Find(g => g.Id == id);
 			onegame.LoanedTo = LoanedTo;
 			onegame.LoanedDate = dt;
+			onegame.LoanedDate.Value.ToShortDateString();
 
 			return View(Gamelist);
 		}
