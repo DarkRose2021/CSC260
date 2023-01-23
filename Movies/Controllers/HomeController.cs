@@ -31,6 +31,17 @@ namespace Movies.Controllers
 			return View();
 		}
 
+		public IActionResult RouteTest(int? id)
+		{
+			return Content($"id = {id?.ToString() ?? "NULL"}");
+		}
+
+		public IActionResult Colors(string colors)
+		{
+			var colorlist = colors.Split('/');
+			return Content(string.Join(",", colorlist));
+		}
+
 		public IActionResult ParamTest(int? id)
 		{
 			return Content($"id = {id?.ToString() ?? "NULL"}");
