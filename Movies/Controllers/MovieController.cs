@@ -45,5 +45,27 @@ namespace Movies.Controllers
 
             return View(MoviesList);
         }
+
+        [HttpGet]
+        public IActionResult Edit(int? id)
+        {
+            if (id == null) return NotFound();
+
+            Movie foundMovie = MoviesList.Find(x => x.Id == id);
+
+            if (foundMovie == null) return NotFound();
+
+            return View(foundMovie);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Movie movie)
+        {
+            int i;
+            i = MoviesList.FindIndex(x => x.Id == movie.Id);
+            MoviesList[i] = movie;
+            TempData["success"] = "'" + movie.title + "' Updated";
+            return RedirectToAction("MultiMovie", "Movie");
+        }
     }
 }
