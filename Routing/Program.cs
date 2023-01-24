@@ -1,4 +1,4 @@
-namespace Movies
+namespace Routing
 {
 	public class Program
 	{
@@ -30,23 +30,30 @@ namespace Movies
 				name: "default",
 				pattern: "{controller=Home}/{action=Index}/{id?}");
 
-			//app.MapControllerRoute(
-			//	name: "PizzaRouteTest",
-			//	//pattern: "pizza",
-			//	//pattern: "pizza/[id]",
-			//	//pattern: "pizza/{id?}",
-			//	pattern: "pizza/{id:int?}",
-			//	defaults: new { controller = "Home", action = "RouteTest" });
+			app.MapControllerRoute(
+				name: "HomePage",
+				pattern: "/site.com",
+				defaults: new { controller = "Home", action = "HomePage" });
 
-			//app.MapControllerRoute(
-			//	name: "Colors",
-			//	pattern: "home/colors/{*color}",
-			//	defaults: new { controller = "Home", action = "Colors" });
+			app.MapControllerRoute(
+				name: "Cow",
+				pattern: "/site.com/{id}",
+				defaults: new { controller = "Home", action = "Cow" });
 
-			//app.MapControllerRoute(
-			//	name: "CatchAll",
-			//	pattern: "{*anything}",
-			//	defaults: new { controller = "Home", action = "error" });
+			app.MapControllerRoute(
+				name: "Chicken",
+				pattern: "/site.com/EatMoreChicken",
+				defaults: new { controller = "Home", action = "Chicken" });
+
+			app.MapControllerRoute(
+				name: "Cow2",
+				pattern: "/site.com/{id}/{cow}",
+				defaults: new { controller = "Home", action = "Cow2" });
+
+			app.MapControllerRoute(
+				name: "CatchAll",
+				pattern: "{*anything}",
+				defaults: new { controller = "Home", action = "Index" });
 
 			app.Run();
 		}

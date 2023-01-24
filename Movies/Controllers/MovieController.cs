@@ -42,8 +42,15 @@ namespace Movies.Controllers
 
         public IActionResult MultiMovies()
         {
-
             return View(MoviesList);
+        }
+
+        public IActionResult Delete(int? id)
+        {
+            Movie foundMovie = MoviesList.Find(x => x.Id == id);
+            MoviesList.Remove(foundMovie);
+
+            return RedirectToAction("MultiMovies", "Movie");
         }
 
         [HttpGet]
@@ -65,7 +72,7 @@ namespace Movies.Controllers
             i = MoviesList.FindIndex(x => x.Id == movie.Id);
             MoviesList[i] = movie;
             TempData["success"] = "'" + movie.title + "' Updated";
-            return RedirectToAction("MultiMovie", "Movie");
+            return RedirectToAction("MultiMovies", "Movie");
         }
     }
 }

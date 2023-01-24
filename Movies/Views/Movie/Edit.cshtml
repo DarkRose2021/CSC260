@@ -1,5 +1,4 @@
-﻿@using Movies.Models;
-@model Movie
+﻿@model Movie
 
 <form method="post" asp-action="Edit">
 	<div class="border p-3 mt-4">
@@ -18,7 +17,7 @@
 		</div>
 		<div class="mb-3">
 			<label asp-for="rating"></label>
-			<input asp-for="rating" class="form-control" type="number" required />
+			<input asp-for="rating" class="form-control" required />
 		</div>
 
 		<button type="submit" class="btn btn-primary">
