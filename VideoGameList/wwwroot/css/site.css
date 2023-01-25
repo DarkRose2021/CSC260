@@ -152,10 +152,48 @@ h2 {
     background-color: var(--purple);
 }
 
+    .edit:hover {
+        color: black;
+        background-color: #695472;
+    }
+
+    .edit:active {
+        color: #5F4C68;
+        background-color: #5F4C68;
+    }
+
+    .edit:visited, .delete:visited, .add:visited, .backBtn:visited{
+        color: black;
+    }
+
 .delete {
     background-color: var(--yellow);
 }
 
+    .delete:hover {
+        color: black;
+        background-color: #BAB86D;
+    }
+
+    .delete:active {
+        color: #A9A763;
+        background-color: #A9A763;
+    }
+
 .backBtn, .add {
     background-color: var(--pink);
+}
+
+    .backBtn:hover, .add:hover {
+        color: black;
+        background-color: #AD7196;
+    }
+
+    .backBtn:active, address:active {
+        color: #9D6788;
+        background-color: #9D6788;
+    }
+
+.add{
+    margin: 2% 45%;
 }
