@@ -40,6 +40,18 @@ namespace Routing.Controllers
 			return Content($"The cow {cow} moos at you {id?.ToString()} times.");
 		}
 
+		public IActionResult CowGallery(int? id)
+		{
+			if (id == null) return NotFound();
+			return Content($"{id?.ToString()}");
+		}
+
+		public IActionResult CowGallery2(int? id, int? num)
+		{
+			if (id == null || num == null) return NotFound();
+			return Content($"{id?.ToString()}, {num?.ToString()}");
+		}
+
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()
 		{

@@ -51,6 +51,21 @@ namespace Routing
 				defaults: new { controller = "Home", action = "Cow2" });
 
 			app.MapControllerRoute(
+				name: "CowGallery",
+				pattern: "/site.com/AllCows/Gallery/{id}",
+				defaults: new { controller = "Home", action = "CowGallery" });
+
+			app.MapControllerRoute(
+				name: "CowGallery2",
+				pattern: "/site.com/AllCows/Gallery/{id}/Page{num}",
+				defaults: new { controller = "Home", action = "CowGallery2" });
+
+			app.MapControllerRoute(
+				name: "CowGallery3",
+				pattern: "/site.com/AllCows/Gallery/{id}/{num}",
+				defaults: new { controller = "Home", action = "CowGallery2" });
+
+			app.MapControllerRoute(
 				name: "CatchAll",
 				pattern: "{*anything}",
 				defaults: new { controller = "Home", action = "Index" });
