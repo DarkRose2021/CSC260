@@ -13,21 +13,25 @@
 		<div class="row pb-2">
 			<h2 class="text-primary">Create Movie
 				<hr />
+				<div asp-validation-summary="All" class="text-danger"></div>
 			</h2>
 			
 			<div class="mb-3">
 				<label asp-for="title"></label>
 				<input asp-for="title" class="form-control" />
+				<span asp-validation-for="title" class="text-danger"></span>
 			</div>
 
 			<div class="mb-3">
 				<label asp-for="year"></label>
 				<input asp-for="year" class="form-control" />
+				<span asp-validation-for="year" class="text-danger"></span>
 			</div>
 
 			<div class="mb-3">
 				<label asp-for="rating"></label>
 				<input asp-for="rating" class="form-control" />
+				<span asp-validation-for="rating" class="text-danger"></span>
 			</div>
 
 			<button type="submit" class="btn btn-primary">Create Movie</button>

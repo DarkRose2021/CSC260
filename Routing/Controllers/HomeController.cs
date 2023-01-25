@@ -42,12 +42,14 @@ namespace Routing.Controllers
 
 		public IActionResult CowGallery(int? id)
 		{
+			//No Clue what to put here
 			if (id == null) return NotFound();
 			return Content($"{id?.ToString()}");
 		}
 
 		public IActionResult CowGallery2(int? id, int? num)
 		{
+			//No Clue what to put here
 			if (id == null || num == null) return NotFound();
 			return Content($"{id?.ToString()}, {num?.ToString()}");
 		}
