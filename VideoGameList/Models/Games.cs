@@ -10,13 +10,13 @@
 		public string Genre { get; set; } = "";
 		public char? Rating { get; set; } = null;
 		public int? ReleaseYear { get; set; } = null;
-		public string Image { get; set; } = "";
+		public string? Image { get; set; } = "";
 		public string? LoanedTo { get; set; } = "";
 		public DateTime? LoanedDate { get; set; }
 
 		public Games() { }
 
-		public Games(string title, string platform, string genre, char? rating, int? releaseYear, string image, string? loanedTo, DateTime? loanedDate)
+		public Games(string title, string platform, string genre, char? rating, int? releaseYear, string? image, string? loanedTo, DateTime? loanedDate)
 		{
 			this.Title = title;
 			this.Platform = platform;

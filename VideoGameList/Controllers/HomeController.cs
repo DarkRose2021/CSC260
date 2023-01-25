@@ -28,6 +28,48 @@ namespace VideoGameList.Controllers
 		}
 
 		[HttpGet]
+		public IActionResult add()
+		{
+			return View();
+		}
+
+		[HttpPost]
+		public IActionResult Add(Games game)
+		{
+			Gamelist.Add(game);
+			return RedirectToAction("Collection", "Home");
+		}
+
+		public IActionResult Delete(int? id)
+		{
+			Games foundGame = Gamelist.Find(x => x.Id == id);
+			TempData["success"] = "'" + foundGame.Title + "' Removed";
+			Gamelist.Remove(foundGame);
+
+			return RedirectToAction("Collection", "Home");
+		}
+
+		[HttpGet]
+		public IActionResult Edit(int? id)
+		{
+			if (id == null) return NotFound();
+			Games foundGame = Gamelist.Find(x => x.Id == id);
+			if (foundGame == null) return NotFound();
+
+			return View(foundGame);
+		}
+
+		[HttpPost]
+		public IActionResult Edit(Games game)
+		{
+			int i;
+			i = Gamelist.FindIndex(x => x.Id == game.Id);
+			Gamelist[i] = game;
+			TempData["success"] = "'" + game.Title + "' Updated";
+			return RedirectToAction("Collection", "Home");
+		}
+
+		[HttpGet]
 		public IActionResult Collection()
 		{
 			ViewBag.count = Gamelist.Count;

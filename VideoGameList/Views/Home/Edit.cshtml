@@ -1,0 +1,25 @@
+﻿@model Games
+<h1>Edit Game</h1>
+
+<form asp-action="Edit" method="post">
+	<label asp-for="Title"></label><br />
+	<input asp-for="Title" /><br />
+
+	<label asp-for="Rating"></label><br />
+	<input asp-for="Rating" /><br />
+
+	<label asp-for="Genre"></label><br />
+	<input asp-for="Genre" /><br />
+
+	<label asp-for="Platform"></label><br />
+	<input asp-for="Platform" /><br />
+
+	<label asp-for="ReleaseYear"></label><br />
+	<input asp-for="ReleaseYear" /><br />
+
+	<label asp-for="Image"></label><br />
+	<input asp-for="Image" /><br />
+
+	<button type="submit">Edit Game</button>
+	<a asp-action="Collection" asp-controller="Home" class="BackBtn">Back to your collection</a>
+</form>

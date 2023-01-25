@@ -6,6 +6,8 @@
 <h1>Game Collection</h1>
 <h2>You have @ViewBag.count games in your collection</h2>
 <div>
+
+    <a asp-controller="Home" asp-action="Add" class="add">Add New Game</a><br />
     <div class="allGames">
         @foreach (Games games in Model)
         {
