@@ -43,23 +43,14 @@ namespace Routing.Controllers
 
 		public IActionResult CowGallery(int? id)
 		{
-			//No Clue what to put here
 			if (id == null) return NotFound();
-			return Content($"{id?.ToString()}");
+			return Content($"There are {id.ToString()} cows on this page");
 		}
 
 		public IActionResult CowGallery2(int? id, int? num)
 		{
-			//No Clue what to put here
 			if (id == null || num == null) return NotFound();
-			return Content($"There are {id}");
-		}
-
-		public IActionResult CowGallery3(int? id, int? num)
-		{
-			//No Clue what to put here
-			if (id == null || num == null) return NotFound();
-			return Content($"{id?.ToString()}, {num?.ToString()}");
+			return Content($"There are {id.ToString()} cows on page {num.ToString()}");
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
