@@ -4,6 +4,7 @@
     --yellow: #E2DE84;
     --pink: #D188B5;
     --black: #36393B;
+    --error: #D93131;
 }
 
 html {
@@ -196,4 +197,15 @@ h2 {
 
 .add{
     margin: 2% 45%;
+}
+
+.form {
+    display: block;
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+    text-align: left;
+    padding: 1%;
 }

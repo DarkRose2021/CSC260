@@ -36,8 +36,9 @@ namespace Routing.Controllers
 
 		public IActionResult Cow2(int? id, string? cow)
 		{
-			if (id == null || cow == null) return NotFound();
-			return Content($"The cow {cow} moos at you {id?.ToString()} times.");
+			if (id == null) return NotFound();
+			if (cow != null) return Content($"The cow {cow} moos at you {id?.ToString()} times.");
+			return Content($"The cow Default Cow moos at you {id?.ToString()} times.");
 		}
 
 		public IActionResult CowGallery(int? id)
@@ -48,6 +49,13 @@ namespace Routing.Controllers
 		}
 
 		public IActionResult CowGallery2(int? id, int? num)
+		{
+			//No Clue what to put here
+			if (id == null || num == null) return NotFound();
+			return Content($"There are {id}");
+		}
+
+		public IActionResult CowGallery3(int? id, int? num)
 		{
 			//No Clue what to put here
 			if (id == null || num == null) return NotFound();

@@ -1,6 +1,9 @@
 ﻿@model Games
 <h1>Add a New Game</h1>
 
+<div class="form">
+
+
 <form asp-action="Add" method="post">
 	<label asp-for="Title"></label><br />
 	<input asp-for="Title" /><br />
@@ -23,3 +26,5 @@
 	<button type="submit" class="AddBtn">Add Game</button>
 	<a asp-action="Collection" asp-controller="Home" class="backBtn">Back to your collection</a>
 </form>
+
+</div>
