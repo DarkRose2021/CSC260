@@ -32,7 +32,7 @@ namespace Routing
 
 			app.MapControllerRoute(
 				name: "Chicken",
-				pattern: "/Routing.com/EatMoreChicken",
+				pattern: "/EatMoreChicken",
 				defaults: new { controller = "Home", action = "Chicken" });
 
 			app.MapControllerRoute(
@@ -42,22 +42,22 @@ namespace Routing
 
 			app.MapControllerRoute(
 				name: "Cow",
-				pattern: "/Routing.com/{id:int}",
+				pattern: "/{id:int}",
 				defaults: new { controller = "Home", action = "Cow" });
 
 			app.MapControllerRoute(
 				name: "Cow2",
-				pattern: "/Routing.com/{id:int}/{cow}",
+				pattern: "/{id:int}/{cow}",
 				defaults: new { controller = "Home", action = "Cow2" });
 
 			app.MapControllerRoute(
 				name: "CowGallery",
-				pattern: "/Routing.com/AllCows/Gallery/{id:int}",
+				pattern: "/AllCows/Gallery/{id:int}",
 				defaults: new { controller = "Home", action = "CowGallery" });
 
 			app.MapControllerRoute(
 				name: "CowGallery2",
-				pattern: "/Routing.com/AllCows/Gallery/{id:int}/Page{num:int}",
+				pattern: "/AllCows/Gallery/{id:int}/Page{num:int}",
 				defaults: new { controller = "Home", action = "CowGallery2" });
 
 			app.MapControllerRoute(
