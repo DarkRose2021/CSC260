@@ -53,6 +53,7 @@ namespace Routing.Controllers
 			return Content($"There are {id.ToString()} cows on page {num.ToString()}");
 		}
 
+
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()
 		{

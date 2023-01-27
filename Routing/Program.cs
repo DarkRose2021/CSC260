@@ -31,38 +31,38 @@ namespace Routing
 				pattern: "{controller=Home}/{action=Index}/{id?}");
 
 			app.MapControllerRoute(
-				name: "HomePage",
-				pattern: "/site.com",
-				defaults: new { controller = "Home", action = "HomePage" });
-
-			app.MapControllerRoute(
-				name: "Cow",
-				pattern: "/site.com/{id}",
-				defaults: new { controller = "Home", action = "Cow" });
-
-			app.MapControllerRoute(
 				name: "Chicken",
-				pattern: "/site.com/EatMoreChicken",
+				pattern: "/Routing.com/EatMoreChicken",
 				defaults: new { controller = "Home", action = "Chicken" });
 
 			app.MapControllerRoute(
+				name: "HomePage",
+				pattern: "/Routing.com",
+				defaults: new { controller = "Home", action = "Index" });
+
+			app.MapControllerRoute(
+				name: "Cow",
+				pattern: "/Routing.com/{id:int}",
+				defaults: new { controller = "Home", action = "Cow" });
+
+			app.MapControllerRoute(
 				name: "Cow2",
-				pattern: "/site.com/{id}/{cow}",
+				pattern: "/Routing.com/{id:int}/{cow}",
 				defaults: new { controller = "Home", action = "Cow2" });
 
 			app.MapControllerRoute(
 				name: "CowGallery",
-				pattern: "/site.com/AllCows/Gallery/{id}",
+				pattern: "/Routing.com/AllCows/Gallery/{id:int}",
 				defaults: new { controller = "Home", action = "CowGallery" });
 
 			app.MapControllerRoute(
 				name: "CowGallery2",
-				pattern: "/site.com/AllCows/Gallery/{id}/Page{num}",
+				pattern: "/Routing.com/AllCows/Gallery/{id:int}/Page{num:int}",
 				defaults: new { controller = "Home", action = "CowGallery2" });
 
 			app.MapControllerRoute(
 				name: "CowGallery3",
-				pattern: "/site.com/AllCows/Gallery/{id}/{num}",
+				pattern: "/Routing.com/AllCows/Gallery/{id:int}/{num:int}",
 				defaults: new { controller = "Home", action = "CowGallery2" });
 
 			app.MapControllerRoute(
