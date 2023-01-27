@@ -1,16 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Movies.Data;
+using Movies.Interfaces;
 using Movies.Models;
 
 namespace Movies.Controllers
 {
     public class MovieController : Controller
     {
-        private static List<Movie> MoviesList = new List<Movie>
-        {
-            new Movie("Hunger Games", 2012, 4.5f),
-            new Movie("Saving Private Ryan", 1998, 5.0f),
-            new Movie("Woknda Forever", 2022, 4.7f)
-        };
+        //link to data access layer
+        IDataAccessLayer dal = new MovieListDAL();
+
         public IActionResult Index()
         {
             return View();
@@ -31,7 +30,7 @@ namespace Movies.Controllers
             }
             if (ModelState.IsValid)
             {
-                MoviesList.Add(m);
+                dal.AddMovie(m);
                 TempData["success"] = "Movie Added";
                 return RedirectToAction("MultiMovies", "Movie");
             }
@@ -46,15 +45,12 @@ namespace Movies.Controllers
 
         public IActionResult MultiMovies()
         {
-            return View(MoviesList);
+            return View(dal.GetMovies());
         }
 
         public IActionResult Delete(int? id)
         {
-            Movie foundMovie = MoviesList.Find(x => x.Id == id);
-            TempData["success"] = "'" + foundMovie.title + "' Removed";
-            MoviesList.Remove(foundMovie);
-
+            dal.RemoveMovie(id);
             return RedirectToAction("MultiMovies", "Movie");
         }
 
@@ -71,9 +67,9 @@ namespace Movies.Controllers
         [HttpPost]
         public IActionResult Edit(Movie movie)
         {
-            int i;
+            /*int i;
             i = MoviesList.FindIndex(x => x.Id == movie.Id);
-            MoviesList[i] = movie;
+            MoviesList[i] = movie;*/
             TempData["success"] = "'" + movie.title + "' Updated";
             return RedirectToAction("MultiMovies", "Movie");
         }
