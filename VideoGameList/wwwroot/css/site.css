@@ -1,3 +1,17 @@
+/*taken from w3schools so that I could get rid of the buttons on the number field*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
 :root {
     --purple: #7E6589;
     --blue: #58A4B0;
@@ -149,9 +163,8 @@ h2 {
     color: black;
     text-decoration: none;
     margin: 1.5%;
-    padding: 1%;
+    padding: 2%;
     border-radius: 4px;
-    width: fit-content;
 }
 
 .edit {
@@ -188,7 +201,6 @@ h2 {
 
 .backBtn, .add {
     background-color: var(--pink);
-    margin: 2%;
 }
 
     .backBtn:hover, .add:hover {
@@ -203,6 +215,7 @@ h2 {
 
 .add{
     margin: 2% 45%;
+    font-size: 1.2em;
 }
 
 .form {
@@ -218,5 +231,13 @@ h2 {
     color: var(--yellow);
     display: inline-block;
     text-align: left;
-    padding: 1%;
+    padding: 1.5%;
+    margin: .5%;
 }
+
+    .AddForm input {
+        color: var(--pink);
+        background-color: #2D2F31;
+        border: solid #1e2021;
+        border-radius: 4px;
+    }

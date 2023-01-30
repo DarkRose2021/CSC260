@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using VideoGameList.Validators;
 
 namespace VideoGameList.Models
 {
+	[GameList]
 	public class Games
 	{
 		private static int? nextID = 0;
@@ -9,20 +11,15 @@ namespace VideoGameList.Models
 		[Required(ErrorMessage = "Can't be left empty")]
 		public string Title { get; set; }
 
-		[Required(ErrorMessage = "Cant be left empty or under 3 characters")]
-		[MinLength(3)]
+		[Required(ErrorMessage = "Cant be left empty")]
 		public string Platform { get; set; }
 
 		[Required(ErrorMessage = "Genre can't be left empty or under 10 characters")]
-		[MinLength(10)]
 		public string Genre { get; set; }
 
 		public char? Rating { get; set; }
 
 		[Required(ErrorMessage = "The Release Year must be 4 numbers long and between 1950-2025")]
-		[MaxLength(4)]
-		[MinLength(4)]
-		[Range(1950, 2025)]
 		public int ReleaseYear { get; set; }
 		public string? Image { get; set; }
 		public string? LoanedTo { get; set; }

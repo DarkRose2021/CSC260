@@ -2,7 +2,7 @@
 <h1>Add a New Game</h1>
 
 <div class="form">
-
+	<div asp-validation-summary="All" class="errormsg"></div>
 
 <form asp-action="Add" method="post" class="AddForm">
 	<label asp-for="Title"></label><br />
@@ -25,9 +25,9 @@
 		<span asp-validation-for="ReleaseYear" class="errormsg"></span><br />
 
 	<label asp-for="Image"></label><br />
-	<input asp-for="Image" /><br />
+	<input asp-for="Image" /><br /><br />
 
-	<button type="submit" class="AddBtn">Add Game</button> <br />
+	<button type="submit" class="AddBtn">Add Game</button> <br /> <br />
 	<a asp-action="Collection" asp-controller="Home" class="backBtn">Back to your collection</a>
 </form>
 

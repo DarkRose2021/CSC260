@@ -1,25 +1,28 @@
 ﻿@model Games
 <h1>Edit Game</h1>
 
-<form asp-action="Edit" method="post">
-	<label asp-for="Title"></label><br />
-	<input asp-for="Title" /><br />
+<div class="form">
 
-	<label asp-for="Rating"></label><br />
-	<input asp-for="Rating" /><br />
+	<form asp-action="Edit" method="post" class="AddForm">
+		<label asp-for="Title" ></label><br />
+		<input asp-for="Title" required /><br />
 
-	<label asp-for="Genre"></label><br />
-	<input asp-for="Genre" /><br />
+		<label asp-for="Rating"></label><br />
+		<input asp-for="Rating" /><br />
 
-	<label asp-for="Platform"></label><br />
-	<input asp-for="Platform" /><br />
+		<label asp-for="Genre"></label><br />
+		<input asp-for="Genre" required /><br />
 
-	<label asp-for="ReleaseYear"></label><br />
-	<input asp-for="ReleaseYear" /><br />
+		<label asp-for="Platform"></label><br />
+		<input asp-for="Platform" required /><br />
 
-	<label asp-for="Image"></label><br />
-	<input asp-for="Image" /><br />
+		<label asp-for="ReleaseYear"></label><br />
+		<input asp-for="ReleaseYear" required /><br />
 
-	<button type="submit">Edit Game</button>
-	<a asp-action="Collection" asp-controller="Home" class="BackBtn">Back to your collection</a>
-</form>
+		<label asp-for="Image"></label><br />
+		<input asp-for="Image" /><br />
+		<br />
+		<button type="submit" class="AddBtn">Edit Game</button><br /><br />
+		<a asp-action="Collection" asp-controller="Home" class="backBtn">Back to your collection</a>
+	</form>
+</div>

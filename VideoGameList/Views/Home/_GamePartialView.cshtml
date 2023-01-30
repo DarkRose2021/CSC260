@@ -9,7 +9,15 @@ else
 	<div class="gameCard">
 		<div class="gameCardBody">
 			<h2>@Model.Title</h2>
-			<img src="~/assets/@Model.Image" width="400px"> <br>
+			@if (Model.Image == null || Model.Image == "")
+			{
+				<img src="~/assets/placeholder.jpg" width="400px" alt="No Image given">
+			}
+			else
+			{
+				<img src="~/assets/@Model.Image" width="400px">
+			}
+			<br>
 			<p class="blue">Platforms: @Model.Platform</p>
 			<p class="yellow">Release Year: @Model.ReleaseYear</p>
 			<p class="yellow">Genre: <br /> @Model.Genre</p>
