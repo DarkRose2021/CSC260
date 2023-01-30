@@ -51,25 +51,27 @@ namespace Movies.Controllers
         public IActionResult Delete(int? id)
         {
             dal.RemoveMovie(id);
+            TempData["success"] = "Movie Removed";
             return RedirectToAction("MultiMovies", "Movie");
         }
 
         [HttpGet]
         public IActionResult Edit(int? id)
         {
-            if (id == null) return NotFound();
-            Movie foundMovie = MoviesList.Find(x => x.Id == id);
-            if (foundMovie == null) return NotFound();
-
-            return View(foundMovie);
+            Movie foundmovie = dal.GetMovie(id);
+            if (foundmovie == null)
+            {
+                TempData["Error"] = "Movie not found";
+                return RedirectToAction("MultiMovies", "Movie");
+            }
+            return View(foundmovie);
         }
 
         [HttpPost]
         public IActionResult Edit(Movie movie)
         {
-            /*int i;
-            i = MoviesList.FindIndex(x => x.Id == movie.Id);
-            MoviesList[i] = movie;*/
+
+            dal.EditMovie(movie);
             TempData["success"] = "'" + movie.title + "' Updated";
             return RedirectToAction("MultiMovies", "Movie");
         }
