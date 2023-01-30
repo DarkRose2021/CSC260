@@ -27,6 +27,11 @@ body {
   margin-bottom: 60px;
 }
 
+.errormsg{
+    color: var(--error);
+    font-weight: bold;
+}
+
 nav, footer {
     background-color: #313436;
     color: var(--yellow);
@@ -183,6 +188,7 @@ h2 {
 
 .backBtn, .add {
     background-color: var(--pink);
+    margin: 2%;
 }
 
     .backBtn:hover, .add:hover {
@@ -204,7 +210,12 @@ h2 {
     text-align: center;
 }
 
-form {
+.AddForm {
+    background-color: #313436;
+    border: solid 1px #2D2F31;
+    border-radius: 5px;
+    max-width: 500px;
+    color: var(--yellow);
     display: inline-block;
     text-align: left;
     padding: 1%;

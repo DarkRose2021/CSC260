@@ -36,8 +36,12 @@ namespace VideoGameList.Controllers
 		[HttpPost]
 		public IActionResult Add(Games game)
 		{
-			Gamelist.Add(game);
-			return RedirectToAction("Collection", "Home");
+			if (ModelState.IsValid)
+			{
+				Gamelist.Add(game);
+				return RedirectToAction("Collection", "Home");
+			}
+			return View();
 		}
 
 		public IActionResult Delete(int? id)
