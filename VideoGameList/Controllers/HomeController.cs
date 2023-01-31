@@ -18,6 +18,7 @@ namespace VideoGameList.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.count = dal.GetGameCount();
             return View();
         }
 
@@ -62,10 +63,20 @@ namespace VideoGameList.Controllers
             return RedirectToAction("Collection", "Home");
         }
 
+        [HttpPost]
+        public IActionResult Search(string key)
+        {
+            if (string.IsNullOrEmpty(key))
+            {
+                return View("Collection", dal.GetGames());
+            }
+            return View("Collection", dal.GetGames().Where(x => x.Title.ToLower().Contains(key.ToLower())));
+        }
+
         [HttpGet]
         public IActionResult Collection()
         {
-            ViewBag.count = dal.GetGameCount();
+
             return View(dal.GetGames());
         }
 

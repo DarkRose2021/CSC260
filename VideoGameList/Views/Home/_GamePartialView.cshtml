@@ -40,10 +40,14 @@ else
 			}
 			else
 			{
-				<form asp-action="Collection" asp-route-id="@Model.Id" method="post">
-					<input asp-for="LoanedTo" name="LoanedTo" placeholder="Name" required>
-					<button type="submit">Loan</button>
-				</form>
+				<div class="form">
+					<form asp-action="Collection" asp-route-id="@Model.Id" method="post">
+						<input asp-for="LoanedTo" name="LoanedTo" placeholder="Name" required>
+						<button type="submit">Loan</button>
+					</form>
+				</div>
+
+
 			}
 			<br />
 			<a asp-action="Edit" asp-route-id="@Model.Id" class="edit">Edit</a>

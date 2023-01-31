@@ -2,242 +2,240 @@
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 /* Firefox */
 input[type=number] {
-    -moz-appearance: textfield;
+	-moz-appearance: textfield;
 }
 
 
 :root {
-    --purple: #7E6589;
-    --blue: #58A4B0;
-    --yellow: #E2DE84;
-    --pink: #D188B5;
-    --black: #36393B;
-    --error: #D93131;
+	--purple: #7E6589;
+	--blue: #58A4B0;
+	--yellow: #E2DE84;
+	--pink: #D188B5;
+	--black: #36393B;
+	--error: #D93131;
 }
 
 html {
-  font-size: 14px;
+	font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+	html {
+		font-size: 16px;
+	}
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+	position: relative;
+	min-height: 100%;
 }
 
 body {
-    background-color: var(--black);
-  margin-bottom: 60px;
+	background-color: var(--black);
+	margin-bottom: 60px;
 }
 
-.errormsg{
-    color: var(--error);
-    font-weight: bold;
+.errormsg {
+	color: var(--error);
+	font-weight: bold;
 }
 
 nav, footer {
-    background-color: #313436;
-    color: var(--yellow);
-    box-shadow: 2px 2px #2D2F31;
+	background-color: #313436;
+	color: var(--yellow);
+	box-shadow: 2px 2px #2D2F31;
 }
 
 nav {
-    border-bottom: solid 1px #2D2F31;
+	border-bottom: solid 1px #2D2F31;
 }
 
 footer {
-    border-top: solid 1px #2D2F31;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;
-    padding: .5%;
+	border-top: solid 1px #2D2F31;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 2.5rem;
+	padding: .5%;
 }
 
-a, .nav-link, footer a:link {
-    color: var(--yellow);
-}
+	a, .nav-link, footer a:link {
+		color: var(--yellow);
+	}
 
-    a:hover, .nav-link:hover, footer a:hover {
-        color: var(--blue);
-    }
+		a:hover, .nav-link:hover, footer a:hover {
+			color: var(--blue);
+		}
 
-    a:active, .nav-link:active, footer a:active {
-        color: #313436;
-    }
+		a:active, .nav-link:active, footer a:active {
+			color: #313436;
+		}
 
-    footer a:visited {
-        color: var(--pink);
-    }
+	footer a:visited {
+		color: var(--pink);
+	}
 
-h1{
-    color: var(--blue);
-    text-align: center;
+h1 {
+	color: var(--blue);
+	text-align: center;
 }
 
 h2 {
-    text-align: center;
-    color: var(--purple);
-    font-weight: bold;
+	text-align: center;
+	color: var(--purple);
+	font-weight: bold;
 }
 
-.blue{
-    color: var(--blue);
+.blue {
+	color: var(--blue);
 }
 
 .yellow {
-    color: var(--yellow);
+	color: var(--yellow);
 }
 
 .pink {
-    color: var(--pink);
+	color: var(--pink);
 }
 
 .allGames {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-    flex-wrap: wrap;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .gameCard {
-    padding: 2%;
-    text-align:center;
-    background-color: #313436;
-    border: solid 1px #2D2F31;
-    border-radius: 5px;
-    box-shadow: 5px 5px;
-    max-width: 500px;
-    margin: 1%;
+	padding: 2%;
+	text-align: center;
+	background-color: #313436;
+	border: solid 1px #2D2F31;
+	border-radius: 5px;
+	box-shadow: 5px 5px;
+	max-width: 500px;
+	margin: 1%;
 }
 
-    .gameCard img {
-        flex-shrink: 1;
-        border: 5px solid #515355;
-        border-radius: 10px;
-    }
+	.gameCard img {
+		flex-shrink: 1;
+		border: 5px solid #515355;
+		border-radius: 10px;
+	}
 
-.gameCard p{
-    font-size: 1.3em;
+	.gameCard p {
+		font-size: 1.3em;
+	}
+
+	.gameCard input[type="text"] {
+		color: var(--pink);
+		background-color: #2D2F31;
+		border: solid #1e2021;
+		border-radius: 4px;
+	}
+
+button {
+	border: none;
+	background-color: var(--blue);
+	padding: .5%;
+	margin: .5%;
+	width: fit-content;
+	color: black;
+	border-radius: 4px;
 }
 
-.gameCard input[type="text"] {
-    color: var(--pink);
-    background-color: #2D2F31;
-    border: solid #1e2021;
-    border-radius: 4px;
-}
+	button:hover {
+		background-color: #498791;
+	}
 
-    .gameCard button, .AddBtn{
-        border: none;
-        background-color: var(--blue);
-        padding: 1%;
-        margin: .5%;
-        width: fit-content;
-        color: black;
-        border-radius: 4px;
-    }
+	button:active {
+		background-color: #313436;
+		color: #313436;
+	}
 
-    .gameCard button:hover {
-        background-color: #498791;
-    }
-
-    .gameCard button:active {
-        background-color: #313436;
-        color: #313436;
-    }
-
-.edit, .delete, .backBtn, .add {
-    color: black;
-    text-decoration: none;
-    margin: 1.5%;
-    padding: 2%;
-    border-radius: 4px;
+.edit, .delete, .backBtn {
+	color: black;
+	text-decoration: none;
+	margin: 1.5%;
+	padding: 2%;
+	border-radius: 4px;
 }
 
 .edit {
-    background-color: var(--purple);
+	background-color: var(--purple);
 }
 
-    .edit:hover {
-        color: black;
-        background-color: #695472;
-    }
+	.edit:hover {
+		color: black;
+		background-color: #695472;
+	}
 
-    .edit:active {
-        color: #5F4C68;
-        background-color: #5F4C68;
-    }
+	.edit:active {
+		color: #5F4C68;
+		background-color: #5F4C68;
+	}
 
-    .edit:visited, .delete:visited, .add:visited, .backBtn:visited{
-        color: black;
-    }
+	.edit:visited, .delete:visited, .add:visited, .backBtn:visited {
+		color: black;
+	}
 
 .delete {
-    background-color: var(--yellow);
+	background-color: var(--yellow);
 }
 
-    .delete:hover {
-        color: black;
-        background-color: #BAB86D;
-    }
+	.delete:hover {
+		color: black;
+		background-color: #BAB86D;
+	}
 
-    .delete:active {
-        color: #A9A763;
-        background-color: #A9A763;
-    }
+	.delete:active {
+		color: #A9A763;
+		background-color: #A9A763;
+	}
 
-.backBtn, .add {
-    background-color: var(--pink);
+.backBtn {
+	background-color: var(--pink);
 }
 
-    .backBtn:hover, .add:hover {
-        color: black;
-        background-color: #AD7196;
-    }
+	.backBtn:hover {
+		color: black;
+		background-color: #AD7196;
+	}
 
-    .backBtn:active, address:active {
-        color: #9D6788;
-        background-color: #9D6788;
-    }
-
-.add{
-    margin: 2% 45%;
-    font-size: 1.2em;
-}
+	.backBtn:active {
+		color: #9D6788;
+		background-color: #9D6788;
+	}
 
 .form {
-    display: block;
-    text-align: center;
+	display: block;
+	text-align: center;
+}
+
+form {
+	color: var(--yellow);
+	padding: 1.5%;
+	margin: .5%;
 }
 
 .AddForm {
-    background-color: #313436;
-    border: solid 1px #2D2F31;
-    border-radius: 5px;
-    max-width: 500px;
-    color: var(--yellow);
-    display: inline-block;
-    text-align: left;
-    padding: 1.5%;
-    margin: .5%;
+	background-color: #313436;
+	border: solid 1px #2D2F31;
+	border-radius: 5px;
+	max-width: 500px;
+	display: inline-block;
+	text-align: left;
 }
 
-    .AddForm input {
-        color: var(--pink);
-        background-color: #2D2F31;
-        border: solid #1e2021;
-        border-radius: 4px;
-    }
+input {
+	color: var(--pink);
+	background-color: #2D2F31;
+	border: solid #1e2021;
+	border-radius: 4px;
+}
