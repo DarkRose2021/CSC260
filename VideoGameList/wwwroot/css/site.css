@@ -81,9 +81,12 @@ footer {
 		color: var(--pink);
 	}
 
+h3 {
+	text-align: center;
+}
+
 h1 {
 	color: var(--blue);
-	text-align: center;
 }
 
 h2 {
