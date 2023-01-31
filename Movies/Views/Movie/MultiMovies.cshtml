@@ -4,6 +4,11 @@
 	<h3>@TempData["success"]</h3>
 	<h3>@TempData["Error"]</h3>
 <p>----------------------------------------------</p>
+
+<form class="d-flex" asp-controller="Movie" asp-action="Search" method="post">
+	<input name="key" class="form-control me-sm-2" type="search" placeholder="Search" />
+	<button class="btn btn-secondary my-2 my-sm-o" type="submit">Search</button>
+</form>
 @if (Model == null)
 {
 	<h2>No Movies</h2>

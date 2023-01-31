@@ -68,6 +68,16 @@ namespace Movies.Controllers
         }
 
         [HttpPost]
+        public IActionResult Search(string key)
+        {
+            if (string.IsNullOrEmpty(key))
+            {
+                return View("MultiMovies", dal.GetMovies());
+            }
+            return View("MultiMovies", dal.GetMovies().Where(x => x.title.ToLower().Contains(key.ToLower())));
+        }
+
+        [HttpPost]
         public IActionResult Edit(Movie movie)
         {
 
