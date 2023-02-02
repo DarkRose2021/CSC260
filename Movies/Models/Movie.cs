@@ -7,8 +7,8 @@ namespace Movies.Models
     [NinetysMoviesRating]
     public class Movie
     {
-        private static int? nextID = 0;
-        public int? Id { get; set; } = nextID++;
+        [Key]
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "Please provide a title.")]
         [MaxLength(100)]

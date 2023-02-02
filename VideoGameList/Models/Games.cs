@@ -15,11 +15,13 @@ namespace VideoGameList.Models
 		public string Platform { get; set; }
 
 		[Required(ErrorMessage = "Genre can't be left empty or under 10 characters")]
+		[MaxLength(10)]
 		public string Genre { get; set; }
 
 		public char? Rating { get; set; }
 
 		[Required(ErrorMessage = "The Release Year must be 4 numbers long and between 1950-2025")]
+		[MaxLength(4)]
 		public int ReleaseYear { get; set; }
 		public string? Image { get; set; }
 		public string? LoanedTo { get; set; }
