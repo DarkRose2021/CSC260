@@ -20,7 +20,8 @@ namespace Movies.Data
 
         public void AddMovie(Movie movie)
         {
-            MoviesList.Add(movie);
+            db.Movies.Add(movie);
+            db.SaveChanges();
         }
 
         public void EditMovie(Movie movie)
