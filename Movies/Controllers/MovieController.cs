@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Movies.Data;
 using Movies.Interfaces;
 using Movies.Models;
 
@@ -8,7 +7,12 @@ namespace Movies.Controllers
     public class MovieController : Controller
     {
         //link to data access layer
-        IDataAccessLayer dal = new MovieListDAL();
+        //IDataAccessLayer dal = new MovieListDAL();
+        IDataAccessLayer dal;
+        public MovieController(IDataAccessLayer indal)
+        {
+            dal = indal;
+        }
 
         public IActionResult Index()
         {

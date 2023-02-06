@@ -5,12 +5,18 @@ namespace Movies.Data
 {
     public class MovieListDAL : IDataAccessLayer
     {
-        private static List<Movie> MoviesList = new List<Movie>
+        /*private static List<Movie> MoviesList = new List<Movie>
         {
             new Movie("Hunger Games", 2012, 4.5f),
             new Movie("Saving Private Ryan", 1998, 5.0f),
             new Movie("Woknda Forever", 2022, 4.7f)
-        };
+        };*/
+
+        private AppDbContext db;
+        public MovieListDAL(AppDbContext indb)
+        {
+            db = indb;
+        }
 
         public void AddMovie(Movie movie)
         {
