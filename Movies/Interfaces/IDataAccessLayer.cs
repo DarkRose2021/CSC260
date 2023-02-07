@@ -9,5 +9,6 @@ namespace Movies.Interfaces
         void RemoveMovie(int? id);
         Movie GetMovie(int? id);
         void EditMovie(Movie movie);
+        void EditMovie(int id);
     }
 }

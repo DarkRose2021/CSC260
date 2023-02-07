@@ -24,26 +24,41 @@ namespace Movies.Data
             db.SaveChanges();
         }
 
+        public void EditMovie(int id)
+        {
+            /*int i;
+            Movie movie;
+            movie = db.Movies.Where(x => x.Id == id).FirstOrDefault();
+            db.Movies.Update(movie);
+            db.SaveChanges();*/
+        }
+
         public void EditMovie(Movie movie)
         {
-            MoviesList[MoviesList.FindIndex(x => x.Id == movie.Id)] = movie;
+            /*MoviesList[MoviesList.FindIndex(x => x.Id == movie.Id)] = movie;*/
+            db.Movies.Update(movie);
+            db.SaveChanges();
         }
 
         public Movie GetMovie(int? id)
         {
-            Movie foundMovie = MoviesList.Find(x => x.Id == id);
-            return foundMovie;
+            /*Movie foundMovie = db.Movies.Find(m => m.Id == id).FirstOrDefault();
+            return foundMovie;*/
+            return db.Movies.Where(m => m.Id == id).FirstOrDefault();
         }
 
         public IEnumerable<Movie> GetMovies()
         {
-            return MoviesList;
+            return db.Movies.OrderBy(m => m.title).ToList();
         }
 
         public void RemoveMovie(int? id)
         {
-            Movie findMovie = MoviesList.Find(x => x.Id == id);
-            MoviesList.Remove(findMovie);
+            /*Movie findMovie = MoviesList.Find(x => x.Id == id);
+            MoviesList.Remove(findMovie);*/
+            Movie foundmovie = GetMovie(id);
+            db.Movies.Remove(foundmovie);
+            db.SaveChanges();
         }
     }
 }

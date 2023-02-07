@@ -86,6 +86,7 @@ namespace Movies.Controllers
         {
 
             dal.EditMovie(movie);
+            //dal.EditMovie(movie.Id);
             TempData["success"] = "'" + movie.title + "' Updated";
             return RedirectToAction("MultiMovies", "Movie");
         }
