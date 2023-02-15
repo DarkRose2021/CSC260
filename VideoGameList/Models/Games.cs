@@ -6,8 +6,8 @@ namespace VideoGameList.Models
 	[GameList]
 	public class Games
 	{
-		private static int? nextID = 0;
-		public int? Id { get; set; } = nextID++;
+		[Key]
+		public int Id { get; set; }
 		[Required(ErrorMessage = "Can't be left empty")]
 		public string Title { get; set; }
 
