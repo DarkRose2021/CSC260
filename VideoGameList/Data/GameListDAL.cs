@@ -5,7 +5,7 @@ namespace VideoGameList.Data
 {
     public class GameListDAL : IDataAccessLayer
     {
-        private static List<Games> Gamelist = new List<Games>
+        /*private static List<Games> Gamelist = new List<Games>
         {
             new Games("Stardew Valley", "PC, PS4, Xbox One, Switch", "Indie, RPG, Simulation", 'E', 2016, "stardew.jpg","", null),
             new Games("Slime Rancher", "PC, PS4, Xbox One", "Action, Adventure, Indie", 'E', 2017, "slimerancher.jpg", "", null),
@@ -13,31 +13,38 @@ namespace VideoGameList.Data
             new Games("Satisfactory","PC", "Adventure, Indie, Strategy", null, 2020, "satifactory.jpg", "", null),
             new Games("House Flipper", "PC", "Indie, Simulation", 'E', 2018, "houseflipper.jpg", "", null),
             new Games("Stray", "PC, PS4 & 5", "Adventure, Indie", 'E', 2022, "stray.jpg", "", null)
-        };
+        };*/
+
+        private AppDbContext db;
+        public GameListDAL(AppDbContext indb)
+        {
+            db = indb;
+        }
+
         public void AddGame(Games game)
         {
-            Gamelist.Add(game);
+            db.Add(game);
         }
 
         public void EditGame(Games game)
         {
-            Gamelist[Gamelist.FindIndex(x => x.Id == game.Id)] = game;
+            db.games.Update(game);
+            db.SaveChanges();
         }
 
         public Games GetGame(int? id)
         {
-            Games foundgame = Gamelist.Find(x => x.Id == id);
-            return foundgame;
+            return db.games.Where(m => m.Id == id).FirstOrDefault();
         }
 
         public int GetGameCount()
         {
-            return Gamelist.Count;
+            return db.games.Count();
         }
 
         public IEnumerable<Games> GetGames()
         {
-            return Gamelist;
+            return db.games.OrderBy(m => m.Title).ToList();
         }
 
         public void LoanGame(int? id, string name)
@@ -50,7 +57,9 @@ namespace VideoGameList.Data
 
         public void RemoveGame(int? id)
         {
-            Gamelist.Remove(GetGame(id));
+            Games foundgame = GetGame(id);
+            db.games.Remove(foundgame);
+            db.SaveChanges();
         }
 
         public void ReturnGame(int? id)

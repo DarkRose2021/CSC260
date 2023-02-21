@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using VideoGameList.Data;
 using VideoGameList.Interface;
 using VideoGameList.Models;
 
@@ -10,7 +9,11 @@ namespace VideoGameList.Controllers
     {
 
         private readonly ILogger<HomeController> _logger;
-        IDataAccessLayer dal = new GameListDAL();
+        IDataAccessLayer dal;
+        public HomeController(IDataAccessLayer indal)
+        {
+            dal = indal;
+        }
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;

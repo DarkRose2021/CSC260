@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using VideoGameList.Data;
 using VideoGameList.Interface;
 
@@ -13,7 +14,8 @@ namespace VideoGameList
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddDbContext<AppDbContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddTransient<IDataAccessLayer, GameListDAL>();
 
             var app = builder.Build();
