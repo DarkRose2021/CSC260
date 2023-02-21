@@ -9,6 +9,7 @@ namespace VideoGameList.Interface
         void RemoveGame(int? id);
         Games GetGame(int? id);
         void EditGame(Games game);
+        IEnumerable<Games> FilterGames(string genre, string mparating);
         int GetGameCount();
         void LoanGame(int? id, string name);
         void ReturnGame(int? id);

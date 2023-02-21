@@ -14,10 +14,6 @@ namespace VideoGameList.Controllers
         {
             dal = indal;
         }
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
 
         public IActionResult Index()
         {
@@ -95,6 +91,12 @@ namespace VideoGameList.Controllers
         {
             dal.ReturnGame(id);
             return RedirectToAction("Collection", "Home");
+        }
+
+        [HttpPost]
+        public IActionResult Filter(string genre, string mparating)
+        {
+            return View("Collection", dal.FilterGames(genre, mparating));
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

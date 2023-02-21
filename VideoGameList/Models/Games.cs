@@ -18,7 +18,7 @@ namespace VideoGameList.Models
 		[MaxLength(10)]
 		public string Genre { get; set; }
 
-		public char? Rating { get; set; }
+		public string? Rating { get; set; }
 
 		[Required(ErrorMessage = "The Release Year must be 4 numbers long and between 1950-2025")]
 		[MaxLength(4)]
@@ -29,7 +29,7 @@ namespace VideoGameList.Models
 
 		public Games() { }
 
-		public Games(string title, string platform, string genre, char? rating, int releaseYear, string? image, string? loanedTo, DateTime? loanedDate)
+		public Games(string title, string platform, string genre, string? rating, int releaseYear, string? image, string? loanedTo, DateTime? loanedDate)
 		{
 			this.Title = title;
 			this.Platform = platform;

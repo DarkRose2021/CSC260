@@ -42,6 +42,27 @@ namespace VideoGameList.Data
             return db.games.Count();
         }
 
+        public IEnumerable<Games> FilterGames(string genre, string rating)
+        {
+            if (genre == null)
+                genre = "";
+
+            if (rating == null)
+                rating = string.Empty;
+
+            if (genre == "" && rating == "")
+                return GetGames();  //if they didn't enter anything, return whole list
+
+            IEnumerable<Games> lstgames = GetGames().Where
+                (m => (!string.IsNullOrEmpty(m.Genre) && m.Genre.ToLower().Contains(genre.ToLower()))).ToList();
+            IEnumerable<Games> lstgames2 = lstgames.Where(m => (!string.IsNullOrEmpty(m.Rating) && m.Rating.ToLower().Equals(rating.ToLower()))).ToList();
+
+            if (lstgames2.Count() == 0)
+                return lstgames;
+
+            return lstgames2;
+        }
+
         public IEnumerable<Games> GetGames()
         {
             return db.games.OrderBy(m => m.Title).ToList();
