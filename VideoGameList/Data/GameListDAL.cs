@@ -24,12 +24,18 @@ namespace VideoGameList.Data
         public void AddGame(Games game)
         {
             db.Add(game);
+            db.SaveChanges();
         }
 
-        public void EditGame(Games game)
+        public bool EditGame(Games game)
         {
+            if (game == null)
+            {
+                return false;
+            }
             db.games.Update(game);
             db.SaveChanges();
+            return true;
         }
 
         public Games GetGame(int? id)

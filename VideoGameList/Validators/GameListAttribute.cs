@@ -8,19 +8,19 @@ namespace VideoGameList.Validators
 		protected override ValidationResult IsValid(object value, ValidationContext validationContext)
 		{
 			var game = (Games)validationContext.ObjectInstance;
-			if (game.ReleaseYear < 1958)
+			/*if (game.ReleaseYear < 1958)
 			{
 				return new ValidationResult("Video games weren't around before 1958");
 			}
 			else if (game.ReleaseYear > 2025)
 			{
 				return new ValidationResult("Max release year for games is currently 2025");
-			}
-			else if (game.ReleaseYear.ToString().Length < 4 || game.ReleaseYear.ToString().Length > 4)
+			}*/
+			/*if (game.ReleaseYear.ToString().Length < 4 || game.ReleaseYear.ToString().Length > 4)
 			{
 				return new ValidationResult("The year cant be shorter or longer than 4 numbers");
-			}
-			else if (game.Title == "" || game.Title == " ")
+			}*/
+			if (game.Title == "" || game.Title == " ")
 			{
 				return new ValidationResult("Title can't be left empty");
 			}

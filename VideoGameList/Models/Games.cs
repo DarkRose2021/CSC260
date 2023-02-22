@@ -20,9 +20,9 @@ namespace VideoGameList.Models
 
 		public string? Rating { get; set; }
 
-		[Required(ErrorMessage = "The Release Year must be 4 numbers long and between 1950-2025")]
-		[MaxLength(4)]
-		public int ReleaseYear { get; set; }
+		/*[Required(ErrorMessage = "The Release Year must be 4 numbers long and between 1950-2025")]
+		[MaxLength(4)]*/
+		public int? ReleaseYear { get; set; }
 		public string? Image { get; set; }
 		public string? LoanedTo { get; set; }
 		public DateTime? LoanedDate { get; set; }
