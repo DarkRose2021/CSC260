@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoGameList", "VideoGameL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Routing", "Routing\Routing.csproj", "{21C3A876-5F78-4F71-A6B4-2CD501561AD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validation", "Validation\Validation.csproj", "{196E825B-0FA7-441F-952F-101B63C3A56C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Validation", "Validation\Validation.csproj", "{196E825B-0FA7-441F-952F-101B63C3A56C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Social Media Site", "Social Media Site\Social Media Site.csproj", "{19B6EB67-B390-4DE3-ACBB-DA20D9B450BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{196E825B-0FA7-441F-952F-101B63C3A56C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{196E825B-0FA7-441F-952F-101B63C3A56C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{196E825B-0FA7-441F-952F-101B63C3A56C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19B6EB67-B390-4DE3-ACBB-DA20D9B450BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19B6EB67-B390-4DE3-ACBB-DA20D9B450BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19B6EB67-B390-4DE3-ACBB-DA20D9B450BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19B6EB67-B390-4DE3-ACBB-DA20D9B450BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
