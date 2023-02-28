@@ -57,7 +57,7 @@ nav {
 }
 
 footer {
-	border-top: solid 1px #2D2F31;
+	border-top: solid 1px #2D2F31 !important;
 	position: absolute;
 	bottom: 0;
 	width: 100%;

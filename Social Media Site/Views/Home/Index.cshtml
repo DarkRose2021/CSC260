@@ -1,8 +1,16 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "Home Page";
 }
+<h1>Welcome to [Name]</h1>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="welcome">
+	<img src="~/assets/logo.png" width="200px" />
+	<div class="welcometxt">
+		<h3>This site lets you connect with other horse owners!</h3>
+		<p>You can post pictures of your horse and connect with other riders.</p>
+	</div>
+</div>
+
+<div class="center">
+	<a class="btn btn-primary" asp-area="Identity" asp-page="/Account/Register">Register</a>
 </div>
