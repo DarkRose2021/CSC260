@@ -24,7 +24,20 @@ namespace Social_Media_Site.Data
 
 		public profile GetProfile(int? id)
 		{
-			throw new NotImplementedException();
+			return db.profiles.Where(m => m.Id == id).FirstOrDefault();
+		}
+
+		public IEnumerable<profile> GetProfile()
+		{
+			return db.profiles.OrderBy(m => m.name).ToList();
+		}
+		public IEnumerable<images> GetImages()
+		{
+			return db.images.ToList();
+		}
+		public IEnumerable<posts> GetPosts()
+		{
+			return db.posts.ToList();
 		}
 	}
 }

@@ -3,17 +3,20 @@
 <h1>Edit Profile</h1>
 
 <form asp-action="editProfile" method="post">
-	<label asp-for="name" ></label><br />
-		<input asp-for="name" required /><br />
+	<label asp-for="name"></label><br />
+	<input asp-for="name" required /><br />
 
-		<label asp-for="age"></label><br />
-		<input asp-for="age" /><br />
+	<label asp-for="age"></label><br />
+	<input asp-for="age" /><br />
 
-		<label asp-for="breed"></label><br />
-		<input asp-for="breed" required /><br />
+	<label asp-for="breed"></label><br />
+	<input asp-for="breed" /><br />
 
-		<label asp-for="Image"></label><br />
-		<input asp-for="Image" /><br />
-		<br />
-		<button type="submit" class="AddBtn">Edit Profile</button>
+	<label asp-for="bio"></label><br />
+	<input asp-for="bio" /><br />
+
+	<label asp-for="img"></label><br />
+	<input asp-for="img" /><br />
+	<br />
+	<button type="submit" class="AddBtn">Edit Profile</button>
 </form>

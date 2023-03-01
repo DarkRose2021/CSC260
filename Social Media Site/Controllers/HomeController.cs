@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Social_Media_Site.Interfaces;
 using Social_Media_Site.Models;
 using System.Diagnostics;
-using System.Security.Claims;
 
 namespace Social_Media_Site.Controllers
 {
@@ -43,24 +42,22 @@ namespace Social_Media_Site.Controllers
 			return RedirectToAction("Collection", "Home");
 		}
 
-
-		[Authorize]
-		public IActionResult AddProfile()
-		{
-			string x;
-			x = User.FindFirstValue(ClaimTypes.NameIdentifier);
-			/*if (ModelState.IsValid)
-            {
-                profile.Id = x;
-            }*/
-			return Content(x);
-		}
-
 		[Authorize]
 		[HttpGet]
 		public IActionResult myPage()
 		{
 			return View();
+		}
+
+		[Authorize]
+		[HttpPost]
+		public IActionResult Search(string key)
+		{
+			if (string.IsNullOrEmpty(key))
+			{
+				return View("OthersPage", dal.GetProfile());
+			}
+			return View("OthersPage", dal.GetProfile().Where(x => x.name.ToLower().Contains(key.ToLower())));
 		}
 
 		[Authorize]
@@ -70,7 +67,7 @@ namespace Social_Media_Site.Controllers
 		}
 
 		[Authorize]
-		public IActionResult ViewImages()
+		public IActionResult ViewImages(int id)
 		{
 			return View();
 		}

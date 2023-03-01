@@ -6,5 +6,8 @@ namespace Social_Media_Site.Interfaces
 	{
 		bool EditPofile(profile profile);
 		profile GetProfile(int? id);
+		IEnumerable<profile> GetProfile();
+		IEnumerable<images> GetImages();
+		IEnumerable<posts> GetPosts();
 	}
 }

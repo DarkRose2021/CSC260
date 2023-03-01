@@ -71,7 +71,7 @@ namespace VideoGameList.Data
 
         public IEnumerable<Games> GetGames()
         {
-            return db.games.OrderBy(m => m.Title).ToList();
+            return db.games.ToList();
         }
 
         public void LoanGame(int? id, string name)
