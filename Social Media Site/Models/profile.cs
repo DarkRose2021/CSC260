@@ -11,14 +11,16 @@ namespace Social_Media_Site.Models
 		[Required]
 		public string name { get; set; }
 		public string breed { get; set; }
+		public string img { get; set; }
 
 		profile() { }
 
-		profile(int age, string name, string breed)
+		profile(int age, string name, string breed, string img)
 		{
 			this.age = age;
 			this.name = name;
 			this.breed = breed;
+			this.img = img;
 		}
 	}
 }
