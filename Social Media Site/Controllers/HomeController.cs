@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Social_Media_Site.Models;
 using System.Diagnostics;
 
@@ -19,6 +20,30 @@ namespace Social_Media_Site.Controllers
         }
 
         public IActionResult About()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public IActionResult editProfile()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public IActionResult myPage()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public IActionResult OthersPage()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public IActionResult ViewImages()
         {
             return View();
         }

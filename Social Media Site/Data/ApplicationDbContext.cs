@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Social_Media_Site.Models;
 
 namespace Social_Media_Site.Data
 {
@@ -9,5 +10,8 @@ namespace Social_Media_Site.Data
             : base(options)
         {
         }
+        public DbSet<profile> profiles { get; set; }
+        public DbSet<images> images { get; set; }
+        public DbSet<posts> posts { get; set; }
     }
 }

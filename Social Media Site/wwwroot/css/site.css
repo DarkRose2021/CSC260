@@ -126,18 +126,24 @@ input {
     color: black !important;
 }
     .btn:hover {
-        color: black;
+        color: black !important;
         background-color: #695472;
+        border: none !important;
     }
 
     .btn:active {
-        color: #5F4C68;
+        color: #5F4C68 !important;
         background-color: #5F4C68;
+        border: none !important;
     }
 
-    .btn:visited {
-        color: black;
-    }
+.btn-primary:active {
+    border: none !important;
+}
+
+.btn:visited {
+    color: black !important;
+}
 
 .welcome{
     margin: 1%;
