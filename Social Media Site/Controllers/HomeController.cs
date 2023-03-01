@@ -2,56 +2,70 @@
 using Microsoft.AspNetCore.Mvc;
 using Social_Media_Site.Models;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace Social_Media_Site.Controllers
 {
-    public class HomeController : Controller
-    {
-        private readonly ILogger<HomeController> _logger;
+	public class HomeController : Controller
+	{
+		private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+		/*IDataAccessLayer dal;
+        public HomeController(IDataAccessLayer indal)
         {
-            _logger = logger;
-        }
+            dal = indal;
+        }*/
+		public IActionResult Index()
+		{
+			return View();
+		}
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+		public IActionResult About()
+		{
+			return View();
+		}
 
-        public IActionResult About()
-        {
-            return View();
-        }
+		[Authorize]
+		public IActionResult editProfile()
+		{
+			return View();
+		}
 
-        [Authorize]
-        public IActionResult editProfile()
-        {
-            return View();
-        }
+		[Authorize]
+		public IActionResult AddProfile()
+		{
+			string x;
+			x = User.FindFirstValue(ClaimTypes.NameIdentifier);
+			/*if (ModelState.IsValid)
+            {
+                profile.Id = x;
+            }*/
+			return Content(x);
+		}
 
-        [Authorize]
-        public IActionResult myPage()
-        {
-            return View();
-        }
+		[Authorize]
+		[HttpGet]
+		public IActionResult myPage()
+		{
+			return View();
+		}
 
-        [Authorize]
-        public IActionResult OthersPage()
-        {
-            return View();
-        }
+		[Authorize]
+		public IActionResult OthersPage()
+		{
+			return View();
+		}
 
-        [Authorize]
-        public IActionResult ViewImages()
-        {
-            return View();
-        }
+		[Authorize]
+		public IActionResult ViewImages()
+		{
+			return View();
+		}
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-    }
+		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+		public IActionResult Error()
+		{
+			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+		}
+	}
 }
