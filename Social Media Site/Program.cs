@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Social_Media_Site.Data;
+using Social_Media_Site.Interfaces;
 
 namespace Social_Media_Site
 {
@@ -18,6 +19,7 @@ namespace Social_Media_Site
 
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            builder.Services.AddTransient<IDataAccessLayer, DAL>();
             builder.Services.AddRazorPages();
             builder.Services.Configure<IdentityOptions>(options =>
             {
@@ -64,6 +66,11 @@ namespace Social_Media_Site
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
+
+            app.MapControllerRoute(
+                name: "BestMovie",
+                pattern: "/Spirit",
+                defaults: new { controller = "Home", action = "BestMovie" });
 
             app.Run();
         }

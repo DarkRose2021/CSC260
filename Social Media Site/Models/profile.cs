@@ -6,25 +6,28 @@ namespace Social_Media_Site.Models
 	{
 		[Key]
 		public int Id { get; set; }
-		[Required]
-		public int age { get; set; }
-		[Required]
-		public string name { get; set; }
-		[Required]
-		public string OwnerName { get; set; }
-		public string breed { get; set; }
-		public string img { get; set; }
-		public string bio { get; set; }
+		public string? UserID { get; set; }
+		public int? Horseage { get; set; }
+		public string? Horsename { get; set; }
+		[Required(ErrorMessage = "You must enter a name")]
+		[MaxLength(50)]
+		public string? OwnerName { get; set; }
+		public string? breed { get; set; }
+		[Required(ErrorMessage = "You must have a picture")]
+		public string? img { get; set; }
+		public string? bio { get; set; }
 
 		profile() { }
 
-		profile(int age, string name, string breed, string img, string bio)
+		profile(int? Horseage, string? Horsename, string? breed, string img, string? bio, string? UserID, string? OwnerName)
 		{
-			this.age = age;
-			this.name = name;
+			this.Horseage = Horseage;
 			this.breed = breed;
 			this.img = img;
 			this.bio = bio;
+			this.UserID = UserID;
+			this.OwnerName = OwnerName;
+			this.Horsename = Horsename;
 		}
 	}
 }

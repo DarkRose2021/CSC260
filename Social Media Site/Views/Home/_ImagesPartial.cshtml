@@ -1,1 +1,7 @@
-﻿
+﻿@model images;
+
+if(Model == null){
+	<h1>No Images</h1>
+}else{
+	<img src="@Model.src" width="300px" />
+}

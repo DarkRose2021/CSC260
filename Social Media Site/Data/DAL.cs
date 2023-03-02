@@ -24,12 +24,17 @@ namespace Social_Media_Site.Data
 
 		public profile GetProfile(int? id)
 		{
-			return db.profiles.Where(m => m.Id == id).FirstOrDefault();
+			if (id != null)
+			{
+				return db.profiles.Where(m => m.Id == id).FirstOrDefault();
+			}
+			return null;
+
 		}
 
 		public IEnumerable<profile> GetProfile()
 		{
-			return db.profiles.OrderBy(m => m.name).ToList();
+			return db.profiles.OrderBy(m => m.OwnerName).ToList();
 		}
 		public IEnumerable<images> GetImages()
 		{

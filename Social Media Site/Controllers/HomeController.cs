@@ -3,12 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using Social_Media_Site.Interfaces;
 using Social_Media_Site.Models;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace Social_Media_Site.Controllers
 {
 	public class HomeController : Controller
 	{
-		private readonly ILogger<HomeController> _logger;
+		/*private readonly ILogger<HomeController> _logger;*/
 		IDataAccessLayer dal;
 		public HomeController(IDataAccessLayer indal)
 		{
@@ -24,8 +25,19 @@ namespace Social_Media_Site.Controllers
 			return View();
 		}
 
-		[Authorize]
-		[HttpGet]
+		public IActionResult BestMovie()
+		{
+			return Redirect("https://www.dreamworks.com/movies/spirit-stallion-of-the-cimarron");
+		}
+
+		public IActionResult Profile(profile profile)
+		{
+			profile.UserID = User.FindFirstValue(ClaimTypes.NameIdentifier);
+			return View();
+		}
+
+
+		[Authorize, HttpGet]
 		public IActionResult editProfile(int? id)
 		{
 			if (id == null) return NotFound();
@@ -33,12 +45,11 @@ namespace Social_Media_Site.Controllers
 			return View(dal.GetProfile(id));
 		}
 
-		[Authorize]
-		[HttpPost]
+		[Authorize, HttpPost]
 		public IActionResult editProfile(profile profile)
 		{
 			dal.EditPofile(profile);
-			TempData["success"] = "'" + profile.name + "' Updated";
+			TempData["success"] = "'" + profile.OwnerName + "' Updated";
 			return RedirectToAction("Collection", "Home");
 		}
 
@@ -57,7 +68,7 @@ namespace Social_Media_Site.Controllers
 			{
 				return View("OthersPage", dal.GetProfile());
 			}
-			return View("OthersPage", dal.GetProfile().Where(x => x.name.ToLower().Contains(key.ToLower())));
+			return View("OthersPage", dal.GetProfile().Where(x => x.OwnerName.ToLower().Contains(key.ToLower())));
 		}
 
 		[Authorize]

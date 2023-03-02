@@ -3,11 +3,14 @@
 <h1>Edit Profile</h1>
 
 <form asp-action="editProfile" method="post">
-	<label asp-for="name"></label><br />
-	<input asp-for="name" required /><br />
+	<label asp-for="Horsename"></label><br />
+	<input asp-for="Horsename" required /><br />
 
-	<label asp-for="age"></label><br />
-	<input asp-for="age" /><br />
+	<label asp-for="OwnerName"></label><br />
+	<input asp-for="OwnerName" required /><br />
+
+	<label asp-for="Horseage"></label><br />
+	<input asp-for="Horseage" /><br />
 
 	<label asp-for="breed"></label><br />
 	<input asp-for="breed" /><br />

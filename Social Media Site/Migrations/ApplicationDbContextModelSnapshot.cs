@@ -232,6 +232,9 @@ namespace Social_Media_Site.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("UserID")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("src")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -255,10 +258,13 @@ namespace Social_Media_Site.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<string>("UserID")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("image")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -274,26 +280,27 @@ namespace Social_Media_Site.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("OwnerName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("age")
+                    b.Property<int?>("Horseage")
                         .HasColumnType("int");
 
-                    b.Property<string>("bio")
+                    b.Property<string>("Horsename")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OwnerName")
                         .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("UserID")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("bio")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("breed")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("img")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
